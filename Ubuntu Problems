@@ -1,11 +1,9 @@
-1 Ubuntu Problem：
-
+Problem 1：
 timluo@timluo-virtual-machine:~$ sudo apt install virtualbox
 E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)
 E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
 
 Solution:
-
 (?)timluo@timluo-virtual-machine:~$ sudo apt update
 timluo@timluo-virtual-machine:~$ ps afx|grep apt
   5309 pts/0    S+     0:00          \_ grep --color=auto apt
@@ -15,3 +13,9 @@ timluo@timluo-virtual-machine:~$ sudo rm /var/lib/dpkg/lock
 (?)timluo@timluo-virtual-machine:~$ sudo rm /var/cache/apt/archives/lock
 timluo@timluo-virtual-machine:~$ sudo dpkg --configure -a
 timluo@timluo-virtual-machine:~$ sudo apt update
+
+Problem 2：
+pyopenssl 20.0.1 requires cryptography>=3.2, but you'll have cryptography 2.1.4 which is incompatible.
+
+Solution:
+pip install --upgrade cryptography
