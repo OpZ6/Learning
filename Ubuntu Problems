@@ -62,3 +62,40 @@ login: sudo su
 logout: exit
 
 ------------------------------------------------------------------------------------------------------
+Problem 6:
+
+The virtual machine '********' has terminated unexpectedly during startup with exit code 1 (0x1).
+
+RTR3InitEx failed with rc=-1912 (rc=-1912)
+The VirtualBox kernel modules do not match this version of VirtualBox. The installation of VirtualBox was apparently not successful. Executing
+'/sbin/vboxconfig'
+may correct this. Make sure that you are not mixing builds of VirtualBox from different sources.
+where: supR3HardenedMainInitRuntime what: 4 VERR_VM_DRIVER_VERSION_MISMATCH (-1912) - The installed support driver doesn't match the version of the user. 
+
+Solution:
+modinfo vboxdrv 
+rm /lib/modules/**********
+modinfo vboxdrv
+/sbin/vboxconfig
+modinfo vboxdrv
+
+eg:
+timluo@timluo-virtual-machine:~$ modinfo vboxdrv
+  filename:       /lib/modules/5.4.0-42-generic/updates/dkms/vboxdrv.ko
+  version:        5.2.42_Ubuntu r137960 (0x00290001)
+  license:        GPL
+  description:    Oracle VM VirtualBox Support Driver
+  author:         Oracle Corporation
+  srcversion:     611181AD7E8F50738F48DDF
+  depends:        
+  retpoline:      Y
+  name:           vboxdrv
+  vermagic:       5.4.0-42-generic SMP mod_unload 
+  parm:           force_async_tsc:force the asynchronous TSC mode (int)
+timluo@timluo-virtual-machine:~$ sudo rm /lib/modules/5.4.0-42-generic/updates/dkms/vboxdrv.ko
+timluo@timluo-virtual-machine:~$ modinfo vboxdrv
+  filename:       /lib/modules/5.4.0-42-generic/updates/dkms/vboxdrv.ko
+  modinfo: ERROR: could not get modinfo from 'vboxdrv': No such file or directory
+
+reference: https://www.cnblogs.com/oucbl/p/12079719.html
+
