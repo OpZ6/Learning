@@ -46,3 +46,11 @@ setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
 getcap /usr/sbin/tcpdump
 
 ------------------------------------------------------------------------------------------------------
+Problem 4：
+files read-only and can't edit
+
+Solution:
+eg. sudo gedit /****
+while 'vim' can only read
+
+------------------------------------------------------------------------------------------------------
