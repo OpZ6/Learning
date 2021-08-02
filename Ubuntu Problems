@@ -14,12 +14,14 @@ timluo@timluo-virtual-machine:~$ sudo rm /var/lib/dpkg/lock
 timluo@timluo-virtual-machine:~$ sudo dpkg --configure -a
 timluo@timluo-virtual-machine:~$ sudo apt update
 
+------------------------------------------------------------------------------------------------------
 Problem 2：
 pyopenssl 20.0.1 requires cryptography>=3.2, but you'll have cryptography 2.1.4 which is incompatible.
 
 Solution:
 pip install --upgrade cryptography
 
+------------------------------------------------------------------------------------------------------
 Problem 3：
 install cuckoo sandbox
 
@@ -42,3 +44,5 @@ apt install libguac-client-rdp0 libguac-client-vnc0 libguac-client-ssh0 guacd
 
 setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
 getcap /usr/sbin/tcpdump
+
+------------------------------------------------------------------------------------------------------
