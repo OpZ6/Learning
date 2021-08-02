@@ -19,3 +19,26 @@ pyopenssl 20.0.1 requires cryptography>=3.2, but you'll have cryptography 2.1.4 
 
 Solution:
 pip install --upgrade cryptography
+
+Problem 3：
+install cuckoo sandbox
+
+Solution:
+apt install virtualbox
+
+adduser cuckoo
+usermod -a -G vboxusers cuckoo
+
+t-get install git mongodb libffi-dev build-essential python-django python python-dev python-pip python-pil python-sqlalchemy python-bson python-dpkt python-jinja2 python-magic python-pymongo python-gridfs python-libvirt python-bottle python-pefile python-chardet tcpdump -y
+sudo apt-get install python python-pip python-dev libffi-dev libssl-dev
+sudo apt-get install python-virtualenv python-setuptools
+sudo apt-get install libjpeg-dev zlib1g-dev swig
+sudo apt-get install mongodb
+sudo apt-get install postgresql libpq-dev
+pip install XenAPI
+apt-get install swig
+pip install m2crypto==0.24.0
+apt install libguac-client-rdp0 libguac-client-vnc0 libguac-client-ssh0 guacd
+
+setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
+getcap /usr/sbin/tcpdump
