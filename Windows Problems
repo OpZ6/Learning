@@ -1,0 +1,14 @@
+Problem 1
+
+cuckoo install 
+
+1 python 2.7
+2 python-2.7.18.amd64
+3 virtualbox (5.2.44!!!)
+4 Pillow
+5 Pymongo
+6 cuckoo
+
+P1:Potentially vulnerable virtualbox version installed. Failed to retrieve its version. Update if version is: 6.0.5
+S1：<!-- C:\Users\your id\.cuckoo\conf\cuckoo.conf -->
+     ignore_vulnerabilities = yes    
